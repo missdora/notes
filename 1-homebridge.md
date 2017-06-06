@@ -125,10 +125,7 @@
 
 
 
+[2.HomeAssistant 接入 HomeKit](https://github.com/missdora/notes/blob/master/2-homeassistant.md)
 
-
-下期预告： 
-
-* 将 homeassistant 平台接入 homebridge 服务
-* 自己动手写 homebridge 插件
+[3.自己动手写 homebridge 插件](https://github.com/missdora/notes/blob/master/3-homebridge-plugin.md)
 
