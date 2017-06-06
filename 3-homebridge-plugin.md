@@ -122,7 +122,7 @@ CustomSensor.prototype = {
             value = self.default; 
             // 返回空气质量的枚举类型数据
             // Characteristic.AirQuality.UNKNOWN = 0;
-		   // Characteristic.AirQuality.EXCELLENT = 1;
+            // Characteristic.AirQuality.EXCELLENT = 1;
             // Characteristic.AirQuality.GOOD = 2;
             // Characteristic.AirQuality.FAIR = 3;
             // Characteristic.AirQuality.INFERIOR = 4;
