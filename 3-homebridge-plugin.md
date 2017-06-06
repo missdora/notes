@@ -30,9 +30,9 @@ https://github.com/KhaosT/HAP-NodeJS/blob/master/lib/gen/HomeKitTypes.js 这里�
 
 2.  拥有一个 Service 实例
 
-   ```
-   Line 17:   this.service = new Service.LockMechanism(this.name);
-   ```
+	```
+	Line 17:   this.service = new Service.LockMechanism(this.name);
+   	```
 
 3. 监听 Service 下 Characteristic  的 get 、set 事件， get 事件会在你打开 homekit 查看方块数据时触发，set 事件是在你按下方块后触发。所以并不是所有 Characteristic  都需要监听 set 事件。
 
