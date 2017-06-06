@@ -138,7 +138,7 @@
    }
    ```
 
-3. 现在来解释一下为什么在 `configuration.yml ` 中添加了 ==customize== 字段，在 homebridge-homeassistant 的文档中有介绍过目前 HomeKit 支持的 Service 类型：
+3. 现在来解释一下为什么在 `configuration.yml ` 中添加了 **customize** 字段，在 homebridge-homeassistant 的文档中有介绍过目前 HomeKit 支持的 Service 类型：
 
    1. **Binary Sensor** - door, leak, moisture, motion, smoke, and window state
    2. **Climate** - current temperature, target temperature, heat/cool mode

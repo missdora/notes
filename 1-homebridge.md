@@ -1,10 +1,10 @@
-# 搭建自定义 homekit 
+# 搭建自定义 HomeKit
 
 ### homebridge 是什么
 
- homebridge 的核心是 [HAP-NodeJS](https://github.com/KhaosT/HAP-NodeJS) 。HAP-NodeJS 逆向了 homekit 服务端协议（HAP: HomeKit Accessory Protocol） 从而满足了 geek 玩家的自定义智能家居需求
+ homebridge 的核心是 [HAP-NodeJS](https://github.com/KhaosT/HAP-NodeJS) 。HAP-NodeJS 逆向了 HomeKit 服务端协议（HAP: HomeKit Accessory Protocol） 从而满足了 geek 玩家的自定义智能家居需求
 
-[homebridge](https://github.com/nfarina/homebridge) 封装了  [HAP-NodeJS](https://github.com/KhaosT/HAP-NodeJS) ，搭建了一个桥接平台，在制定了一套插件规范的基础上，实现了 homekit 的自定义插件化， homebridge 的插件全部通过 npm 安装
+[homebridge](https://github.com/nfarina/homebridge) 封装了  [HAP-NodeJS](https://github.com/KhaosT/HAP-NodeJS) ，搭建了一个桥接平台，在制定了一套插件规范的基础上，实现了 HomeKit 的自定义插件化， homebridge 的插件全部通过 npm 安装
 
 
 
@@ -35,7 +35,7 @@
               "name": "Homebridge",
               "username": "{ MAC 地址 }",
               "port": 53699,//Homebridge启动的端口，默认即53699
-              "pin": "111-22-333"//用来在 homekit 中配对 homebridge 服务，保持这个格式，随便写
+              "pin": "111-22-333"//用来在 HomeKit 中配对 homebridge 服务，保持这个格式，随便写
           },
          "platforms": [//平台级插件
           ],
@@ -58,13 +58,13 @@
 
    ​
 
-   3. 在示例中，我注册了 synology 插件。启动 homebridge ，可以在 docker 日志中查看服务是否正常启动。现在你可以打开 homekit 应用添加 homebridge 服务了，需要用到刚才配置项中的 pin 码。服务添加成功之后，正常情况下，homekit 首页中会出现 synology 温度信息的小方块。
+   3. 在示例中，我注册了 synology 插件。启动 homebridge ，可以在 docker 日志中查看服务是否正常启动。现在你可以打开 HomeKit 应用添加 homebridge 服务了，需要用到刚才配置项中的 pin 码。服务添加成功之后，正常情况下，HomeKit 首页中会出现 synology 温度信息的小方块。
 
       ​
 
-### 通过 homekit 控制红外或者射频类家电
+### 通过 HomeKit 控制红外或者射频类家电
 
-1. 我们需要一个支持学习红外及射频的万能遥控器。购买 Broadlink RM Pro，为什么买这个，因为目前市面上支持射频比较好的也就这个设备了，虽然它家的 App 烂的一逼，但是不要担心，接入 homekit 中，就不需要再打开这个 App 了。
+1. 我们需要一个支持学习红外及射频的万能遥控器。购买 Broadlink RM Pro，为什么买这个，因为目前市面上支持射频比较好的也就这个设备了，虽然它家的 App 烂的一逼，但是不要担心，接入 HomeKit 中，就不需要再打开这个 App 了。
 
 2. 设备到手之后，先将 RM Pro 与 App 连接上。这个过程可能很顺利，也可能很不顺利，请多重复 N 次。尝试在 App 中添加红外遥控和射频遥控，测试遥控是否正常
 
@@ -89,7 +89,7 @@
    ]
    ```
 
-5. 重启 homebridge 服务，打开 homebridge 日志面板。如无意外，homekit 中会出现 learn 方块按钮。如果有意外，请查看日志中是否输出了成功检测到 broadlink 的日志信息。如果没有捕获到，请尝试重启 broadlink 设备和 homebridge 服务 N 次。这种情况一般会出现在意外将 broadlink 断电之后。正常情况下99%的概率可以检测到设备。
+5. 重启 homebridge 服务，打开 homebridge 日志面板。如无意外，HomeKit 中会出现 learn 方块按钮。如果有意外，请查看日志中是否输出了成功检测到 broadlink 的日志信息。如果没有捕获到，请尝试重启 broadlink 设备和 homebridge 服务 N 次。这种情况一般会出现在意外将 broadlink 断电之后。正常情况下99%的概率可以检测到设备。
 
 6. 按下 learn 按钮。如无意外，broadlink 的黄灯会亮起，然后，拿着遥控器使劲朝着 broadlink 狂按，同时不停刷新日志，如无意外，日志中会输出捕获到红外遥控或者射频遥控的 hex code。如果有意外，请重复尝试 6 这个步骤 N 次。
 
@@ -109,15 +109,15 @@
    }
    ```
 
-9. 重启 homebridge 服务，如无意外， homekit 中会出现 `Mubu On`的方块按钮，现在请尝试按下，测试遥控是否正常触发。
+9. 重启 homebridge 服务，如无意外， HomeKit 中会出现 `Mubu On`的方块按钮，现在请尝试按下，测试遥控是否正常触发。
 
 10. 如有意外，请仔细查看日志排查问题。如无意外，请重复 8、9 步骤直到添加完所有遥控
 
-11. 由于我们是将非智能家电添加到 homekit 中，所以推荐将「开家电」和「关家电」的操作分开作为两个配置项
+11. 由于我们是将非智能家电添加到 HomeKit 中，所以推荐将「开家电」和「关家电」的操作分开作为两个配置项
 
-### 设置 homekit 场景
+### 设置 HomeKit 场景
 
-1. 在 homekit 中切换到 「房间」面板，点击右上角 + 添加场景，在场景中添加需要执行的配件即可。
+1. 在 HomeKit 中切换到 「房间」面板，点击右上角 + 添加场景，在场景中添加需要执行的配件即可。
 
 
 
