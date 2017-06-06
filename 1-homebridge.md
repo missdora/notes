@@ -14,7 +14,7 @@
 
 2. 打开 Docker ，在注册表中搜索 homebridge，找到 marcoraddatz-homebridge ，下载安装，安装流程参照 https://registry.hub.docker.com/u/marcoraddatz/homebridge/
 
-3. 在启动 homebridge 之前，需要在安装路径下准备两个文件 `install.sh` 和 `config.json`
+3. 在启动 homebridge 之前，需要在安装路径  `/docker/homebridge/`  下准备两个文件 `install.sh` 和 `config.json`
 
    1. `install.sh`用来安装服务自身依赖的模块和插件模块，示例如下：
 
