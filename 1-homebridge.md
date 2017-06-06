@@ -121,6 +121,12 @@
 
 
 
+### 如无意外，你现在可以通过 Siri 控制家电了。
+
+
+
+
+
 下期预告： 
 
 * 将 homeassistant 平台接入 homebridge 服务
