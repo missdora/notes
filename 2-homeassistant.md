@@ -7,7 +7,7 @@
 ### Synology 上安装 HomeAssistant
 
 1. 首先在 Synology 上安装 Docker 套件
-2. 打开 Docker ，在注册表中搜索 homebridge，找到 homeassistant/home-assistant，下载安装。
+2. 打开 Docker ，在注册表中搜索 homeassistant，找到 homeassistant/home-assistant，下载安装。
 3. 启动 HomeAssistant , 如果服务正常启动，在 8123 端口可以访问到 HomeAssistant 服务。
 
 ### HomeAssistant 上安装 Synology 插件
